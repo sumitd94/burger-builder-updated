@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable guard-for-in */
 import React, { useState, useEffect } from 'react';
 import Aux from '../../hoc/Aux/Aux';
@@ -15,7 +16,7 @@ const INGREDIENT_PRICES = {
   bacon: 0.7,
 };
 
-const BurgerBuilder = () => {
+const BurgerBuilder = (props) => {
   const [state, setState] = useState({
     ingredients: '',
     totalPrice: 4,
@@ -72,26 +73,13 @@ const BurgerBuilder = () => {
   };
 
   const purchaseContinueHandler = () => {
-    setShowSpinner(true);
-    const orderData = {
-      ingredients: state.ingredients,
-      price: state.totalPrice,
-      customer: {
-        name: 'Sumit',
-        address: {
-          street: 'plot no 54',
-          zipcode: 432212,
-        },
-      },
-    };
-    axios.post('/orders.json', orderData)
-      .then(() => {
-        setShowSpinner(false);
-        setPurchasing(false);
-      })
-      .catch(() => {
-        setShowSpinner(false);
-      });
+    setShowSpinner(false);
+    const queryParams = Object.entries(state.ingredients).map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
+    const queryString = queryParams.join('&');
+    props.history.push({
+      pathname: '/checkout',
+      search: `?${queryString}`,
+    });
   };
 
   useEffect(() => {

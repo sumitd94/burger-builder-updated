@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import Aux from '../Aux/Aux';
 import classes from './Layout.module.css';
@@ -32,7 +31,7 @@ const Layout = ({ children }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default Layout;
