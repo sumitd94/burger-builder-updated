@@ -1,0 +1,5 @@
+@media (min-width: 968px) {
+  .checkoutContainer {
+    display: flex;
+  }
+}

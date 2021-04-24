@@ -9,6 +9,31 @@
 
 .ContactData input {
   display: block;
+  width: 80%;
+  padding: .5rem;
+  margin: .5rem auto;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.ContactData span {
+  color: red;
+  width: 80%;
+  margin: auto;
+  text-align: left;
+  display: block;
+}
+
+.orderBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  font-weight: bold;
+  color: #5C9210;
+  margin: 10px;
 }
 
 @media (min-width: 600px) {

@@ -7,6 +7,8 @@ import { Route } from 'react-router-dom';
 import CheckoutSummary from '../../components/Order/CheckoutSummary/CheckoutSummary';
 import ContactData from './ContactData/ContactData';
 
+import classNames from './Checkout.module.css';
+
 const Checkout = (props) => {
   const [ingredients] = useState({
     meat: 0,
@@ -28,7 +30,7 @@ const Checkout = (props) => {
   };
 
   return (
-    <div>
+    <div className={classNames.checkoutContainer}>
       <CheckoutSummary
         ingredients={ingredients}
         onCancel={cancelCheckoutHandler}
