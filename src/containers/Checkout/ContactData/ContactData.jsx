@@ -2,13 +2,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import axios from '../../../axios-orders';
 import classeNames from './ContactData.module.css';
 
-const ContactData = ({ ingredients }) => {
+const ContactData = ({ ingredients, history }) => {
   const [showSpinner, setShowSpinner] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -24,8 +25,12 @@ const ContactData = ({ ingredients }) => {
     axios.post('/orders.json', orderData)
       .then(() => {
         setShowSpinner(false);
+        history.replace({
+          pathname: '/thank-you',
+        });
       })
-      .catch(() => {
+      .catch((err) => {
+        console.log(err);
         setShowSpinner(false);
       });
   };
@@ -59,6 +64,9 @@ ContactData.propTypes = {
     bacon: PropTypes.number,
     cheese: PropTypes.number,
   }).isRequired,
+  history: PropTypes.shape({
+    replace: PropTypes.func,
+  }).isRequired,
 };
 
-export default ContactData;
+export default withRouter(ContactData);

@@ -1,0 +1,30 @@
+.ThankYouContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.partyPopper img {
+  width: 40%;
+}
+
+.thankContent {
+  padding: 1rem;
+}
+
+.thankMessage, .orderStatus {
+  font-size: 2rem;
+}
+
+.orderStatus {
+  color: gray;
+}
+
+.thankContent a {
+  text-decoration: none;
+  color: #5C9210;
+}
