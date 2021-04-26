@@ -14,7 +14,8 @@
 
 Fork this repository using the **Fork** option at the top-right corner of this page. This will create your own copy of this repository. You'll be redirected to your forked repository. Copy the link of this repository (which will look like `https://github.com/<your-username>/burger-builder-updated/`) as you'll need it in the step 2.
 
-![how-to-fork]()
+![image](https://user-images.githubusercontent.com/29303618/116047548-ce819680-a691-11eb-87e7-bb4222043c72.png)
+
 
 2. **Cloning repository**
 
