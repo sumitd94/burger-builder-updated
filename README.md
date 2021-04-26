@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+[![Better Uptime Badge](https://betteruptime.com/status-badges/v1/monitor/5hv0.svg)](https://betteruptime.com/?utm_source=status_badge)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# burger-builder
 
-## Available Scripts
+An interface built using React which allows you to build your burger based on your choices of ingredients and order it for yourself.
+This page is hosted on AWS Amplify: https://master.d1qfe9b648t3vc.amplifyapp.com/
 
-In the project directory, you can run:
+# How can I contribute?
 
-### `npm start`
+Wish to contribute? You can find a detailed guide [here](./CONTRIBUTING.md)!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Components
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+All the reusable components are created inside `/components` directory.
 
-### `npm test`
+### CSS Modules
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React has a built in support for CSS Modules. To enable CSS Module for any CSS stylesheet use `.module.scss` in the end of the filename. Let's see and example -
 
-### `npm run build`
+Creating a filename with the name `button.module.scss`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```SCSS
+.btn{
+  color: red;
+  font-size: 100px;
+  border: 0px;
+}
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In the JS file import this stylesheet.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```JavaScript
+import classNames from "./button.module.scss";
 
-### `npm run eject`
+const Button = () => {
+  return <button className={classNames.btn}>Click Me!</button>;
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+export default Button;
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Importing styles in this way will scope all the styles to their respective files. So classname `.btn` is converted to `[filename]_btn__[hash]`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## How to start ?
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This project uses `yarn` as its package manager, make sure you have yarn installed in your system, else you can install it by running the command `npm intall --g yarn`
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+get into the root directory and run this command - `yarn start`, this will start the development server.
